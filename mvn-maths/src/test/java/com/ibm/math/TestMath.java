@@ -26,6 +26,11 @@ public class TestMath {
 	public void testDiv() {
 		assertEquals(2,maths.div(4,2));
 	}
+	
+	@Test
+	public void testSqr() {
+		assertEquals(16,maths.sqr(4));
+	}
 	@Test
 	public void testZeroDiv() {
 		//assertEquals(10,maths.sum(5, 5));
