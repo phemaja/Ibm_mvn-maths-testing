@@ -1,0 +1,28 @@
+pipeline{
+	agent any
+	
+	stages{
+		stage('Check stage'){
+			steps{
+				withMaven(maven : 'Maven'){
+					sh 'mnv --version'
+				}
+			}
+		}
+		
+		stage('Compile stage'){
+			steps{
+				withMaven(maven : 'Maven'){
+					sh 'mvn clean compile'
+				}
+			}
+		}
+		
+		stage('Test stage'){
+			steps{
+				withMaven(maven : 'Maven'){					
+					sh 'mvn test'
+				}
+			}
+		}
+	}
